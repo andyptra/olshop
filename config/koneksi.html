@@ -1,0 +1,18 @@
+<?php
+	try{
+		$host = "localhost";
+		$user = "root";
+		$pwd = "";
+		$dbname = "olshop";
+		$andyptra=new PDO("mysql:host=$host;dbname=$dbname",$user,$pwd,);
+			// set error mode
+		  $andyptra->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+		  	// hapus koneksi
+		  $andyptra = null;
+	}
+	catch (PDOException $e){
+		  // tampilkan pesan kesalahan jika koneksi gagal
+  		echo "Koneksi atau query bermasalah: " . $e->getMessage() . "<br/>";
+  		die();
+	}
+?>
